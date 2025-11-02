@@ -1,15 +1,17 @@
-import Image from "next/image";
+import About from "@/components/blocks/About";
+import CTA from "@/components/blocks/CTA";
+import Hero from "@/components/blocks/Hero";
+import Services from "@/components/blocks/Services";
+import Testimonials from "@/components/blocks/Testimonials";
 
 export default function Home() {
     return (
         <div>
-            hii
-        // Navbar
-        // Hero
-        // Features Bento
-        // Pricing
-        // CTA
-        // Footer
+            <Hero />
+            <Services />
+            <About />
+            <Testimonials />
+            <CTA />
         </div>
     );
 }
