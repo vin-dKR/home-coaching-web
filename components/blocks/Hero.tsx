@@ -1,4 +1,5 @@
 import Header from "./Header";
+import CTAButton from "../ui/CTAButton";
 
 export default function Hero() {
     return (
@@ -6,27 +7,32 @@ export default function Hero() {
             <Header />
 
             {/* Hero Content */}
-            <div className="container-custom pt-32 pb-16 md:pt-40 md:pb-20">
-                <div className="max-w-2xl mx-auto text-center">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                        Get your Home Tutor nearby
+            <div className="container-custom min-h-screen flex items-center justify-center pt-16 pb-16">
+                <div className="max-w-2xl mx-auto text-center w-full">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gray-900 mb-6">
+                        <div className="block font-bold text-nowrap">Get your Home Tutor</div>
+                        <div className={`font-instru bg-gradient-to-br from-midy to-darky bg-clip-text text-transparent mt-1 md:mt-2 italic leading-none`}>
+                            nearby
+                        </div>
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-700 mb-8">
+                    <p className="text-lg md:text-xl lg:text-2xl text-gray-700 mb-8 md:mb-12 font-atki leading-[1.1]">
                         We connect students with trusted local teachers for home coaching in your town. Learn better, closer to home.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <CTAButton
                             href="#find-tutor"
-                            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300"
+                            variant="primary"
+                            className="min-w-[160px]"
                         >
-                            Find a Tutor
-                        </a>
-                        <a
+                            🔍 Find a Tutor
+                        </CTAButton>
+                        <CTAButton
                             href="#become-tutor"
-                            className="bg-white hover:bg-gray-100 text-gray-900 font-semibold py-3 px-8 rounded-lg border border-gray-300 transition-colors duration-300"
+                            variant="secondary"
+                            className="min-w-[160px]"
                         >
-                            Become a Tutor
-                        </a>
+                            👩‍🏫 Become a Tutor
+                        </CTAButton>
                     </div>
                 </div>
             </div>

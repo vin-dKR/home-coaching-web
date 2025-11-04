@@ -2,10 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/blocks/Footer";
 import { Urbanist } from 'next/font/google'
+import { Instrument_Serif } from 'next/font/google'
 
 const urbanist = Urbanist({
     subsets: ['latin'],
 })
+
+const instrumentSerif = Instrument_Serif({
+    weight: '400',
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-instrument-serif',
+})
+
 
 export const metadata: Metadata = {
     title: "Magic Knotes",
@@ -20,7 +29,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${urbanist.className} antialiased`}
+                className={`${urbanist.className} ${instrumentSerif.variable} antialiased`}
             >
                 {children}
                 <Footer />

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Serif:ital@0;1&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -8,6 +10,9 @@
 @theme {
     --color-midy: #FFE83D;
     --color-darky: #FF9000;
+
+    --font-instru: "Instrument Serif", serif;
+    --font-atki: "Atkinson Hyperlegible", sans-serif;
 }
 
 @theme inline {
@@ -57,4 +62,7 @@ body {
     .container-custom {
         @apply max-w-6xl mx-auto;
     }
+}
+
+@font {
 }

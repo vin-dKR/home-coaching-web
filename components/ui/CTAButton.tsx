@@ -15,11 +15,11 @@ const CTAButton = ({
     variant = 'primary',
     type = 'button'
 }: CTAButtonProps) => {
-    const baseStyles = "font-semibold py-2 px-8 rounded-2xl transition-all duration-300 transform hover:px-6 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer";
+    const baseStyles = "font-bold py-2 px-8 rounded-2xl transition-all duration-300 transform hover:px-6 focus:outline-none focus:ring-2 focus:ring-offset-2  border border-2 border-black/20 cursor-pointer";
 
     const variants = {
-        primary: "bg-gradient-to-tr from-midy to-white hover:from-amber-500 hover:to-white text-black font-bold shadow-lg hover:shadow-xl border border-2 border-black/20",
-        secondary: "bg-white hover:bg-gray-100 text-gray-900 border border-gray-300"
+        primary: "bg-gradient-to-tr from-midy to-white hover:from-amber-500 hover:to-white text-black shadow-lg hover:shadow-xl",
+        secondary: "bg-gradient-to-tr from-white to-black/5 hover:bg-gray-100 text-gray-900 border border-gray-300"
     };
 
     const buttonClass = `${baseStyles} ${variants[variant]} ${className}`;
