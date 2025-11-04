@@ -6,7 +6,7 @@ import Testimonials from "@/components/blocks/Testimonials";
 
 export default function Home() {
     return (
-        <div>
+        <div className="bg-white px-2">
             <Hero />
             <Services />
             <About />

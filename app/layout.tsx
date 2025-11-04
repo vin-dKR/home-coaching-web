@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/blocks/Header";
 import Footer from "@/components/blocks/Footer";
+import { Urbanist } from 'next/font/google'
+
+const urbanist = Urbanist({
+    subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
     title: "Magic Knotes",
@@ -16,9 +20,8 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className="antialiased"
+                className={`${urbanist.className} antialiased`}
             >
-                <Header />
                 {children}
                 <Footer />
             </body>
