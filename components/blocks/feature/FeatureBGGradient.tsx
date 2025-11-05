@@ -1,4 +1,5 @@
 import React from "react";
+import FeaturesBento from "./FeaturesSection";
 
 const Gradient = () => {
     const colors = [
@@ -14,7 +15,9 @@ const Gradient = () => {
     ].reverse();
 
     return (
-        <div className="relative min-h-screen w-full overflow-hidden ">
+        <div className="relative w-full overflow-hidden rounded rounded-[3rem]"
+            style={{ minHeight: '100%' }}
+        >
             {colors.map((color, index) => {
                 const size = 30 + index * 20; // progressively larger circles
                 const offset = index - 20
@@ -32,10 +35,8 @@ const Gradient = () => {
                     ></div>
                 );
             })}
-            <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-4xl font-semibold text-white drop-shadow-lg">
-                    Warm Arcs Background
-                </h1>
+            <div className="relative inset-0 flex items-center justify-center z-20">
+                <FeaturesBento />
             </div>
         </div>
     );
