@@ -64,5 +64,23 @@ body {
     }
 }
 
-@font {
+/* globals.css */
+.bg-warm-radial {
+  background: radial-gradient(
+    circle at top center,
+    #fffacd 0%,
+    #ffefb0 20%,
+    #ffd77a 40%,
+    #ffc04d 60%,
+    #ffa500 80%,
+    #ff8c00 100%
+  );
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
