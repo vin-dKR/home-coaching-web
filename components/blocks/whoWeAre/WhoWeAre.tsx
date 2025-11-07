@@ -1,9 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import { aboutUsData } from '@/constants/aboutUsData';
 import ValueCard from './ValueCard';
 import WhoWeAreCard from './WhoWeAreCard';
-import { imageConfig } from '@/constants/aboutUsData';
+import { aboutUsData, imageConfig } from '@/constants/aboutUsData';
 
 
 interface BulletPointProps {
@@ -24,10 +23,10 @@ const AboutUs: React.FC = () => {
     const { header, brand, beliefs, vision, values } = aboutUsData
 
     return (
-        <section className="relative w-full min-h-screen bg-gradient-to-t from-midy/40 to-white overflow-hidden">
+        <section className="relative w-full py-20 min-h-screen bg-gradient-to-t from-midy/40 to-white overflow-hidden rounded-[3rem]">
             {/* Background Ribbon */}
-            <div className="absolute inset-0">
-                <div className={imageConfig.ribbon.className}>
+            <div className="absolute inset-0 h-full">
+                <div className="absolute top-0 -left-20 lg:-left-120 rotate-[75deg] h-screen md:h-[100vh] w-[120vw] opacity-100">
                     <Image
                         src={imageConfig.ribbon.src}
                         alt={imageConfig.ribbon.alt}
