@@ -28,7 +28,7 @@ const AboutUs: React.FC = () => {
             <div className="absolute inset-0 h-full">
                 <div className="absolute top-0 -left-20 lg:-left-120 rotate-[75deg] h-screen md:h-[100vh] w-[120vw] opacity-100">
                     <Image
-                        src={imageConfig.ribbon.src}
+                        src="/images/long-cta-ribbon.png"
                         alt={imageConfig.ribbon.alt}
                         fill
                         quality={imageConfig.ribbon.quality}
