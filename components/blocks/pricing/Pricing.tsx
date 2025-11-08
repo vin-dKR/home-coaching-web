@@ -4,111 +4,13 @@ import Image from 'next/image';
 import WhoWeAreCard from '../whoWeAre/WhoWeAreCard';
 import CTAButton from '@/components/ui/CTAButton';
 import { imageConfig } from '@/constants/aboutUsData';
-import ValueCard from '../whoWeAre/ValueCard';
+import { PricingTier, pricingTiers } from '@/constants/pricing';
 
-interface PricingTier {
-    name: string;
-    monthly: string;
-    quarterly: string;
-    yearly: string;
-    period: string;
-    description: string;
-    features: string[];
-    popular?: boolean;
-    savings?: string;
-}
 
 const Pricing: React.FC = () => {
     const [billingCycle, setBillingCycle] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
 
-    const pricingTiers: PricingTier[] = [
-        {
-            name: "Explorer",
-            monthly: "Free",
-            quarterly: "Free",
-            yearly: "Free",
-            period: "forever",
-            description: "Start your learning journey with basic access",
-            features: [
-                "Access to tutor profiles",
-                "2 monthly connection requests",
-                "Local area search",
-                "Basic messaging system",
-                "Community support",
-                "Profile verification"
-            ]
-        },
-        {
-            name: "Learner Pro",
-            monthly: "₹5,000",
-            quarterly: "₹13,500",
-            yearly: "₹48,000",
-            period: "billed annually",
-            description: "Perfect for dedicated students seeking excellence",
-            features: [
-                "Unlimited connection requests",
-                "Priority tutor matching",
-                "Advanced search filters",
-                "Video call integration",
-                "Progress tracking dashboard",
-                "Study materials library",
-                "Dedicated support manager",
-                "Study group creation",
-                "Exam preparation resources",
-                "Performance analytics"
-            ],
-            popular: true,
-            savings: "Save 20%"
-        },
-        {
-            name: "Master Class",
-            monthly: "₹8,000",
-            quarterly: "₹21,600",
-            yearly: "₹76,800",
-            period: "billed annually",
-            description: "Ultimate learning experience with premium features",
-            features: [
-                "All Learner Pro features",
-                "1-on-1 career counseling",
-                "Premium study materials",
-                "Mock test series",
-                "Scholarship guidance",
-                "College admission support",
-                "24/7 priority support",
-                "Custom learning path",
-                "Progress reports",
-                "Parent dashboard access"
-            ],
-            savings: "Save 25%"
-        }
-    ];
 
-    const faqs = [
-        {
-            question: "How do I find a tutor near me?",
-            answer: "Just enter your subject, grade, and location — we'll show you verified tutors nearby."
-        },
-        {
-            question: "Are tutors verified?",
-            answer: "Yes, every tutor goes through ID verification and profile review."
-        },
-        {
-            question: "Can I choose the timing and frequency?",
-            answer: "Absolutely. You and your tutor can schedule sessions based on mutual convenience."
-        },
-        {
-            question: "How do payments work?",
-            answer: "All payments are processed securely through our platform — no hidden charges."
-        },
-        {
-            question: "Can teachers join from small towns?",
-            answer: "Yes! We're focused on helping teachers and students in towns and local communities."
-        },
-        {
-            question: "Is there any fee for teachers?",
-            answer: "No! Teachers can join Magic Knotes completely free and start connecting with students."
-        }
-    ];
 
     const getPrice = (tier: PricingTier) => {
         switch (billingCycle) {
@@ -245,50 +147,6 @@ const Pricing: React.FC = () => {
                     </p>
                 </WhoWeAreCard>
 
-                {/* FAQ Section */}
-                <WhoWeAreCard>
-                    <h3 className="text-3xl font-instru font-semibold text-gray-800 mb-8 text-center">
-                        Frequently Asked Questions
-                    </h3>
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {faqs.map((faq, index) => (
-                            <ValueCard key={index} className="text-left !p-6 !bg-white/10 hover:!bg-amber-50/30 transition-colors">
-                                <div className="flex items-start space-x-3">
-                                    <div className="w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                        <span className="text-white text-xs font-bold">Q</span>
-                                    </div>
-                                    <div>
-                                        <h4 className="font-semibold text-gray-800 mb-2">{faq.question}</h4>
-                                        <p className="text-sm text-gray-600 font-atki leading-relaxed">{faq.answer}</p>
-                                    </div>
-                                </div>
-                            </ValueCard>
-                        ))}
-                    </div>
-                </WhoWeAreCard>
-
-                {/* Bottom CTA */}
-                <div className="text-center mt-12">
-                    <WhoWeAreCard className="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border-amber-300">
-                        <h3 className="text-2xl md:text-3xl font-instru font-semibold text-gray-800 mb-4">
-                            Ready to Transform Your Learning Journey?
-                        </h3>
-                        <p className="text-gray-600 font-atki text-lg mb-8 max-w-2xl mx-auto">
-                            Join thousands of students who've found their perfect tutors through Magic Knotes
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <CTAButton className="px-12 py-4 text-xl">
-                                Start Learning Today
-                            </CTAButton>
-                            <CTAButton variant="secondary" className="px-12 py-4 text-xl">
-                                Talk to Our Advisor
-                            </CTAButton>
-                        </div>
-                        <p className="text-gray-500 text-sm mt-4 font-atki">
-                            ✅ 7-day money-back guarantee • ✅ No long-term contracts • ✅ Cancel anytime
-                        </p>
-                    </WhoWeAreCard>
-                </div>
             </div>
         </section>
     );

@@ -1,5 +1,7 @@
 import CTA from "@/components/blocks/CTA";
+import FAQs from "@/components/blocks/faq/FAQ";
 import Gradient from "@/components/blocks/feature/FeatureBGGradient";
+import Footer from "@/components/blocks/Footer";
 import Hero from "@/components/blocks/Hero";
 import Pricing from "@/components/blocks/pricing/Pricing";
 import AboutUs from "@/components/blocks/whoWeAre/WhoWeAre";
@@ -13,8 +15,9 @@ export default function Home() {
             <Gradient />
             <AboutUs />
             <Pricing />
+            <FAQs />
             <CTA />
-            // faq
+            <Footer />
         </div>
     );
 }

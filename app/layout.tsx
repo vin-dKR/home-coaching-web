@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Footer from "@/components/blocks/Footer";
 import { Urbanist } from 'next/font/google'
 import { Instrument_Serif } from 'next/font/google'
 
@@ -32,7 +31,6 @@ export default function RootLayout({
                 className={`${urbanist.className} ${instrumentSerif.variable} antialiased`}
             >
                 {children}
-                <Footer />
             </body>
         </html>
     );

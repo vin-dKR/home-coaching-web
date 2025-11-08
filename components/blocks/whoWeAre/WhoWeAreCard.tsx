@@ -13,8 +13,8 @@ const WhoWeAreCard: React.FC<CardProps> = ({
 }) => {
     return (
         <div className={`
-      bg-white/20 rounded-3xl p-6 shadow-sm 
-      ${border ? 'border border-t-10 border-white/20' : ''}
+       rounded-3xl p-6 shadow-sm
+      ${border ? 'border border-t-10 border-white/30' : ''}
       ${blur ? 'backdrop-blur-lg' : ''}
       ${className}
     `}>
