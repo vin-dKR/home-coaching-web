@@ -14,7 +14,7 @@ const BottomCTA: React.FC<BottomCTAProps> = ({ className = "" }) => {
                     Ready to Transform Your Learning Journey?
                 </h3>
                 <p className="text-gray-600 font-atki text-lg mb-8 max-w-2xl mx-auto">
-                    Join thousands of students who've found their perfect tutors through Magic Knotes
+                    Join thousands of students who&apos;ve found their perfect tutors through Magic Knotes
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <CTAButton className="px-12 py-4 text-xl">

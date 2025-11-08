@@ -46,7 +46,7 @@ const TutorSuccessPage: React.FC = () => {
                                 {story.achievement}
                             </div>
                             <p className="text-gray-600 font-atki text-sm leading-relaxed mb-4">
-                                "{story.story}"
+                                &quot;{story.story}&quot;
                             </p>
                             <div className="text-xs text-gray-500">{story.experience}</div>
                         </WhoWeAreCard>

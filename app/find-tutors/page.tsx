@@ -83,7 +83,7 @@ const FindTutorsPage: React.FC = () => {
                 {/* CTA */}
                 <WhoWeAreCard className="text-center bg-amber-50/50">
                     <h3 className="text-2xl font-instru font-semibold text-gray-800 mb-4">
-                        Can't Find What You're Looking For?
+                        Can&apos;t Find What You&apos;re Looking For?
                     </h3>
                     <p className="text-gray-600 mb-6">
                         Let us help you find the perfect tutor match

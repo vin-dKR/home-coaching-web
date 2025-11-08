@@ -46,7 +46,7 @@ const SuccessStoriesPage: React.FC = () => {
                                 Improved: {story.improvement}
                             </div>
                             <p className="text-gray-600 font-atki text-sm leading-relaxed">
-                                "{story.story}"
+                                &quot;{story.story}&quot;
                             </p>
                         </WhoWeAreCard>
                     ))}

@@ -1,37 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Magic Knotes - Tutor-Student Matching Platform
 
-## Getting Started
+Magic Knotes is a modern, responsive web application that connects students with qualified tutors in their local area. Built with Next.js, TypeScript, and Tailwind CSS, the platform provides a seamless experience for both students seeking academic help and tutors looking to share their knowledge.
+![magic-knotes-landing-mvp](https://ibb.co/fzhhZyZN)
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### For Students
+- **Find Local Tutors**: Search for verified tutors by subject, grade, and location
+- **Transparent Pricing**: Clear pricing plans with no hidden fees
+- **Study Resources**: Access to free learning materials and study tools
+- **Success Stories**: Read testimonials from other students
+- **Learning Tips**: Expert advice to improve study techniques
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### For Tutors
+- **Free Registration**: Join the platform completely free
+- **Flexible Scheduling**: Set your own availability and rates
+- **Teaching Resources**: Access to lesson plans and teaching materials
+- **Student Matching**: Get connected with students in your area
+- **Profile Management**: Build your teaching profile with reviews and ratings
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Custom reusable components
+- **Icons**: Emoji-based icons for better performance
+- **Deployment**: Vercel (recommended)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Design System
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Color Palette
+- **Primary**: Amber/Orange gradient (#F59E0B to #EA580C)
+- **Background**: White with subtle gradients
+- **Text**: Gray-800 for headings, Gray-600 for body
+- **Accents**: Amber-500 for buttons and highlights
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Typography
+- **Headings**: Custom fonts (font-instru)
+- **Body**: Clean, readable fonts (font-atki)
+- **Hierarchy**: Clear visual hierarchy with proper spacing
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# home-coaching-web
+### Components
+- **Cards**: Rounded corners (rounded-3xl) with backdrop blur effects
+- **Buttons**: Gradient backgrounds with hover animations
+- **Forms**: Clean inputs with amber focus states
+- **Layout**: Consistent padding and margin system
