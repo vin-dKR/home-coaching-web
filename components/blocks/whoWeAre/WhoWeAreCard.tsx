@@ -1,4 +1,5 @@
 interface CardProps {
+    id?: string
     children: React.ReactNode;
     className?: string;
     blur?: boolean;
@@ -6,18 +7,21 @@ interface CardProps {
 }
 
 const WhoWeAreCard: React.FC<CardProps> = ({
+    id,
     children,
     className = "",
     blur = true,
     border = true
 }) => {
     return (
-        <div className={`
-       rounded-3xl p-6 shadow-sm
-      ${border ? 'border border-t-10 border-white/30' : ''}
-      ${blur ? 'backdrop-blur-lg' : ''}
-      ${className}
-    `}>
+        <div
+            id={id}
+            className={`
+                rounded-3xl p-6 shadow-sm
+                ${border ? 'border border-t-10 border-white/30' : ''}
+                ${blur ? 'backdrop-blur-lg' : ''}
+                ${className}
+            `}>
             {children}
         </div>
     );

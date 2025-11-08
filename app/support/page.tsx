@@ -1,19 +1,73 @@
 "use client"
- 
-import React from 'react';
+
+import React, { useState } from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
 import WhoWeAreCard from '@/components/blocks/whoWeAre/WhoWeAreCard';
 import CTAButton from '@/components/ui/CTAButton';
 import { supportData } from '@/constants/supportData';
 import { contactUtils } from '@/utils/contactUtils';
 
+interface FormData {
+    name: string;
+    email: string;
+    issueType: string;
+    message: string;
+}
+
 const SupportPage: React.FC = () => {
     const { supportOptions, quickHelpTopics, issueTypes } = supportData;
 
+    const [formData, setFormData] = useState<FormData>({
+        name: '',
+        email: '',
+        issueType: '',
+        message: ''
+    });
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle form submission logic here
-        alert('Thank you for your message! We will get back to you soon.');
+
+        const subject = `Support Request: ${formData.issueType}`;
+        const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+Issue Type: ${formData.issueType}
+
+Message:
+${formData.message}
+
+---
+This message was sent from Magic Knotes Support Page
+    `.trim();
+
+        // Open email client with pre-filled data
+        contactUtils.openEmailWithBody('magicknotes365@gmail.com', subject, body);
+
+        // Reset form
+        setFormData({
+            name: '',
+            email: '',
+            issueType: '',
+            message: ''
+        });
+    };
+
+    const handleContactClick = (type: 'phone' | 'email' | 'whatsapp', contact: string) => {
+        if (type === 'email') {
+            const subject = 'Support Request - Magic Knotes';
+            const body = 'Hello Magic Knotes team,\n\nI would like to get support regarding...';
+            contactUtils.openEmailWithBody(contact, subject, body);
+        } else {
+            contactUtils.handleContactClick(type, contact);
+        }
     };
 
     return (
@@ -30,7 +84,7 @@ const SupportPage: React.FC = () => {
                             <h3 className="font-semibold text-gray-800 mb-2">{option.title}</h3>
                             <p className="text-gray-600 font-atki text-sm mb-4">{option.description}</p>
                             <button
-                                onClick={() => contactUtils.handleContactClick(option.type, option.contact)}
+                                onClick={() => handleContactClick(option.type, option.contact)}
                                 className="bg-amber-100 rounded-2xl p-4 w-full hover:bg-amber-200 transition-colors cursor-pointer"
                             >
                                 <p className="text-amber-700 font-semibold">{option.contact}</p>
@@ -51,8 +105,15 @@ const SupportPage: React.FC = () => {
                                 key={index}
                                 className="text-left p-4 rounded-2xl border border-amber-200 hover:bg-midy/20 transition-colors text-gray-600 font-atki"
                                 onClick={() => {
-                                    // You can add functionality to scroll to relevant section or open modal
-                                    console.log(`Selected topic: ${topic}`);
+                                    // Pre-fill the form with the selected topic
+                                    setFormData(prev => ({
+                                        ...prev,
+                                        issueType: topic.replace('?', ''),
+                                        message: `I need help with: ${topic}\n\n`
+                                    }));
+
+                                    // Scroll to form
+                                    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
                                 }}
                             >
                                 {topic}
@@ -62,7 +123,7 @@ const SupportPage: React.FC = () => {
                 </WhoWeAreCard>
 
                 {/* Contact Form */}
-                <WhoWeAreCard className="mt-12">
+                <WhoWeAreCard id="contact-form" className="mt-12">
                     <h3 className="text-2xl font-instru font-semibold text-gray-800 mb-6 text-center">
                         Send us a Message
                     </h3>
@@ -70,18 +131,30 @@ const SupportPage: React.FC = () => {
                         <div className="grid md:grid-cols-2 gap-4">
                             <input
                                 type="text"
+                                name="name"
                                 placeholder="Your Name"
+                                value={formData.name}
+                                onChange={handleInputChange}
                                 className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
                                 required
                             />
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="Your Email"
+                                value={formData.email}
+                                onChange={handleInputChange}
                                 className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
                                 required
                             />
                         </div>
-                        <select className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 w-full" required>
+                        <select
+                            name="issueType"
+                            value={formData.issueType}
+                            onChange={handleInputChange}
+                            className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 w-full"
+                            required
+                        >
                             {issueTypes.map((type, index) => (
                                 <option key={index} value={type} disabled={index === 0}>
                                     {type}
@@ -89,14 +162,17 @@ const SupportPage: React.FC = () => {
                             ))}
                         </select>
                         <textarea
+                            name="message"
                             placeholder="Describe your issue or question..."
+                            value={formData.message}
+                            onChange={handleInputChange}
                             rows={5}
                             className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 w-full"
                             required
                         ></textarea>
                         <div className="text-center">
                             <CTAButton type="submit" className="px-12">
-                                Send Message
+                                Send Message via Email
                             </CTAButton>
                         </div>
                     </form>
@@ -118,16 +194,23 @@ const SupportPage: React.FC = () => {
                             📞 Call Now
                         </button>
                         <button
-                            onClick={() => contactUtils.openWhatsApp('+919142992036')}
+                            onClick={() => {
+                                const message = `Hello Magic Knotes, I need support with:\n\nName: ${formData.name || 'Not provided'}\nEmail: ${formData.email || 'Not provided'}\nIssue: ${formData.issueType || 'General inquiry'}`;
+                                contactUtils.openWhatsAppWithMessage('+919142992036', message);
+                            }}
                             className="bg-green-500 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-green-600 transition-colors"
                         >
                             💬 WhatsApp
                         </button>
                         <button
-                            onClick={() => contactUtils.openEmail('magicknotes365@gmail.com')}
+                            onClick={() => {
+                                const subject = 'Magic Knotes Support';
+                                const body = `Hello Magic Knotes team,\n\nI would like to get support regarding...\n\nName: ${formData.name || ''}\nEmail: ${formData.email || ''}`;
+                                contactUtils.openEmailWithBody('magicknotes365@gmail.com', subject, body);
+                            }}
                             className="bg-amber-500 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-amber-600 transition-colors"
                         >
-                            📧 Email Us
+                            📧 Quick Email
                         </button>
                     </div>
                 </WhoWeAreCard>
