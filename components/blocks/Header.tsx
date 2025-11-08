@@ -44,7 +44,7 @@ export default function Header() {
         if (isMobile) {
             return isScrolled ? "90%" : "85%"
         } else {
-            return isScrolled ? "60%" : "50%"
+            return isScrolled ? "60%" : "70%"
         }
     }
 
@@ -92,7 +92,7 @@ export default function Header() {
                         />
                     </div>
                     <motion.a
-                        href="#home"
+                        href="/"
                         className="text-xl md:text-2xl font-bold text-gray-900"
                         initial={false}
                         animate={{

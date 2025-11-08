@@ -1,9 +1,7 @@
 "use client"
 import React, { useState } from 'react';
-import Image from 'next/image';
 import WhoWeAreCard from '../whoWeAre/WhoWeAreCard';
 import CTAButton from '@/components/ui/CTAButton';
-import { imageConfig } from '@/constants/aboutUsData';
 import { PricingTier, pricingTiers } from '@/constants/pricing';
 
 
@@ -28,24 +26,11 @@ const Pricing: React.FC = () => {
     };
 
     return (
-        <section className="relative w-full py-20 min-h-screen bg-gradient-to-t from-midy/40 to-white overflow-hidden rounded-[3rem]">
-            {/* Background Ribbon */}
-            <div className="absolute inset-0 h-full">
-                <div className="absolute top-0 -left-20 lg:-left-120 rotate-[75deg] h-screen md:h-[100vh] w-[120vw] opacity-100">
-                    <Image
-                        src="/images/long-cta-ribbon.png"
-                        alt={imageConfig.ribbon.alt}
-                        fill
-                        quality={imageConfig.ribbon.quality}
-                        priority={imageConfig.ribbon.priority}
-                    />
-                </div>
-            </div>
-
+        <section id="pricing" className="relative w-full py-0 md:py-20 min-h-screen bg-gradient-to-t from-midy/40 to-white overflow-hidden rounded-[3rem]">
             {/* Content */}
-            <div className="relative z-10 space-y-8 w-full md:max-w-6xl mx-auto px-2 md:px-4 py-16">
+            <div className="relative z-10 space-y-8 w-full md:max-w-6xl mx-auto px-2 md:px-4 py-8 md:py-16">
                 {/* Header */}
-                <div className="text-center mb-16 rounded-3xl py-8 px-6">
+                <div className="text-center mb-4 md:mb-16 rounded-3xl py-8 px-6">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                         Invest in Your Future
                     </h2>
@@ -56,15 +41,15 @@ const Pricing: React.FC = () => {
                 </div>
 
                 {/* Billing Toggle */}
-                <div className="flex justify-center mb-12">
-                    <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-2 border border-white/20">
+                <div className="flex justify-center mb-6 md:mb-12">
+                    <div className="bg-midy/30 backdrop-blur-lg rounded-2xl p-2 border border-midy">
                         {(['monthly', 'quarterly', 'yearly'] as const).map((cycle) => (
                             <button
                                 key={cycle}
                                 onClick={() => setBillingCycle(cycle)}
                                 className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${billingCycle === cycle
                                     ? 'bg-amber-500 text-white shadow-lg'
-                                    : 'text-gray-600 hover:text-amber-600'
+                                    : 'text-gray-600 hover:text-amber-600 hover:bg-white'
                                     }`}
                             >
                                 {cycle.charAt(0).toUpperCase() + cycle.slice(1)}
@@ -78,11 +63,11 @@ const Pricing: React.FC = () => {
                     {pricingTiers.map((tier, index) => (
                         <WhoWeAreCard
                             key={index}
-                            className={`relative transition-all duration-500 hover:transform hover:scale-105 ${tier.popular ? 'ring-4 ring-amber-500 shadow-2xl' : 'hover:ring-2 hover:ring-amber-300'
+                            className={`relative transition-all duration-500 border border-black hover:transform hover:scale-105 ${tier.popular ? 'ring-4 ring-amber-500 shadow-2xl' : 'ring-2 ring-amber-200 hover:ring-amber-300 h-fit'
                                 }`}
                         >
                             {tier.popular && (
-                                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
                                     <span className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
                                         ⭐ Most Popular
                                     </span>
@@ -90,7 +75,7 @@ const Pricing: React.FC = () => {
                             )}
 
                             {tier.savings && billingCycle !== 'monthly' && (
-                                <div className="absolute -top-3 right-4">
+                                <div className="absolute -top-6 right-3">
                                     <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
                                         {tier.savings}
                                     </span>
@@ -114,7 +99,7 @@ const Pricing: React.FC = () => {
                                 </p>
                             </div>
 
-                            <div className="space-y-3 mb-8">
+                            <div className="mb-2">
                                 {tier.features.map((feature, featureIndex) => (
                                     <div key={featureIndex} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-amber-50/50 transition-colors">
                                         <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
@@ -124,7 +109,7 @@ const Pricing: React.FC = () => {
                             </div>
 
                             <div className="mt-auto">
-                                <CTAButton className="w-full justify-center text-lg py-4">
+                                <CTAButton className="w-full justify-center text-lg">
                                     {tier.name === "Explorer" ? "Get Started Free" : "Choose Plan"}
                                 </CTAButton>
                             </div>
@@ -135,7 +120,7 @@ const Pricing: React.FC = () => {
                 {/* Teacher Free Section */}
                 <WhoWeAreCard className="bg-gradient-to-r from-amber-50 to-orange-50 border-amber-200 text-center">
                     <div className="flex items-center justify-center mb-4">
-                        <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                        <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4 border border-green-700">
                             <span className="text-white font-bold text-xl">✓</span>
                         </div>
                         <h3 className="text-2xl font-instru font-semibold text-gray-800">

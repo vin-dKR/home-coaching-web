@@ -189,7 +189,7 @@ This message was sent from Magic Knotes Support Page
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <button
                             onClick={() => contactUtils.openPhone('+919142992036')}
-                            className="bg-green-500 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-green-600 transition-colors"
+                            className="bg-green-500 border border-green-600 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-green-600 transition-colors"
                         >
                             📞 Call Now
                         </button>
@@ -198,7 +198,7 @@ This message was sent from Magic Knotes Support Page
                                 const message = `Hello Magic Knotes, I need support with:\n\nName: ${formData.name || 'Not provided'}\nEmail: ${formData.email || 'Not provided'}\nIssue: ${formData.issueType || 'General inquiry'}`;
                                 contactUtils.openWhatsAppWithMessage('+919142992036', message);
                             }}
-                            className="bg-green-500 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-green-600 transition-colors"
+                            className="bg-green-500 border border-green-600 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-green-600 transition-colors"
                         >
                             💬 WhatsApp
                         </button>
@@ -208,7 +208,7 @@ This message was sent from Magic Knotes Support Page
                                 const body = `Hello Magic Knotes team,\n\nI would like to get support regarding...\n\nName: ${formData.name || ''}\nEmail: ${formData.email || ''}`;
                                 contactUtils.openEmailWithBody('magicknotes365@gmail.com', subject, body);
                             }}
-                            className="bg-amber-500 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-amber-600 transition-colors"
+                            className="bg-amber-500 border border-amber-600 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-amber-600 transition-colors"
                         >
                             📧 Quick Email
                         </button>

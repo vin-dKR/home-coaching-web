@@ -23,10 +23,10 @@ const AboutUs: React.FC = () => {
     const { header, brand, beliefs, vision, values } = aboutUsData
 
     return (
-        <section className="relative w-full py-20 min-h-screen bg-gradient-to-t from-midy/40 to-white overflow-hidden rounded-[3rem]">
+        <section id="about" className="relative w-full py-0 md:py-20 min-h-screen bg-gradient-to-t from-midy/40 to-white overflow-hidden rounded-[3rem]">
             {/* Background Ribbon */}
             <div className="absolute inset-0 h-full">
-                <div className="absolute top-0 -left-20 lg:-left-120 rotate-[75deg] h-screen md:h-[100vh] w-[120vw] opacity-100">
+                <div className="absolute top-80 md:top-0 -left-20 lg:-left-120 md:rotate-[75deg] h-screen md:h-[100vh] w-[120vw] opacity-100">
                     <Image
                         src="/images/long-cta-ribbon.png"
                         alt={imageConfig.ribbon.alt}
@@ -38,10 +38,10 @@ const AboutUs: React.FC = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 space-y-4 w-full md:max-w-4xl mx-auto px-2 md:px-4 py-16">
+            <div className="relative z-10 space-y-4 w-full md:max-w-4xl mx-auto px-2 md:px-4 py-8 md:py-16">
                 {/* Header */}
-                <div className="text-center mb-16 rounded-3xl py-8 px-6">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                <div className="text-center mb-8 md:mb-16 rounded-3xl py-0 md:py-8 px-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
                         {header.title}
                     </h2>
                     <div className={`w-20 h-1 ${header.accentColor} mx-auto`}></div>

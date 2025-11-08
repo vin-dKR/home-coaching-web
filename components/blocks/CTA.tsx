@@ -4,7 +4,7 @@ import CTAButton from '../ui/CTAButton';
 
 const CTACard: React.FC = () => {
     return (
-        <div className="w-full w-full lg:w-5xl mx-auto px-4 md:px-0 pb-40">
+        <div className="w-full w-full lg:w-5xl mx-auto px-0 pb-40">
             {/* Main CTA Card */}
             <div className="relative bg-gradient-to-t from-midy/40 to-white rounded-3xl p-12 border border-1 border-black/5 overflow-hidden">
 

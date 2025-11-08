@@ -12,7 +12,7 @@ interface FAQSectionProps {
     className?: string;
 }
 
-const FAQSection: React.FC<FAQSectionProps> = ({ faqs, className = "" }) => {
+const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const toggleFAQ = (index: number) => {
@@ -20,7 +20,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs, className = "" }) => {
     };
 
     return (
-        <WhoWeAreCard className={className}>
+        <WhoWeAreCard className="px-2 md:px-4">
             <h3 className="text-3xl font-instru font-semibold text-gray-800 mb-8 text-center">
                 Frequently Asked Questions
             </h3>
@@ -28,11 +28,11 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs, className = "" }) => {
                 {faqs.map((faq, index) => (
                     <div
                         key={index}
-                        className="border border-white/20 rounded-2xl overflow-hidden transition-all duration-300 hover:border-amber-200"
+                        className="border border-white/20 bg-midy/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-amber-200"
                     >
                         <button
                             onClick={() => toggleFAQ(index)}
-                            className="w-full px-6 py-4 text-left flex items-center justify-between bg-white/10 hover:bg-amber-50/30 transition-colors"
+                            className="w-full px-2 md:px-6 py-4 text-left flex items-center justify-between bg-white/10 hover:bg-amber-50/30 transition-colors"
                         >
                             <div className="flex items-center space-x-4">
                                 <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">

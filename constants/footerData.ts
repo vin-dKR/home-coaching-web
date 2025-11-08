@@ -36,14 +36,14 @@ export const footerData = {
         {
             icon: '📧',
             label: 'Email us at',
-            value: 'hello@magicknotes.com',
-            href: 'mailto:hello@magicknotes.com'
+            value: 'magicknotes356@gmail.com',
+            href: 'mailto:magicknotes356@gmail.com'
         },
         {
             icon: '📞',
             label: 'Call us at',
-            value: '+91 1800 123 456',
-            href: 'tel:+911800123456'
+            value: '+91 9142992036',
+            href: 'tel:+919142992036'
         },
         {
             icon: '📍',

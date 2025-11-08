@@ -16,7 +16,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ title, subtitle, children }) =>
 
             <div className='relative w-full h-full'>
                 <div className="absolute inset-0 h-full overflow-hidden">
-                    <div className="absolute top-0 -left-20 lg:-left-200 rotate-[75deg] h-screen md:h-[100vh] w-[160vw] opacity-100">
+                    <div className="absolute top-0 -left-20 lg:-left-240 rotate-[75deg] h-screen md:h-[100vh] w-[180vw] opacity-100">
                         <Image
                             src="/images/long-cta-ribbon.png"
                             alt="Background ribbon"

@@ -36,62 +36,64 @@ const BecomeTutorPage: React.FC = () => {
     ];
 
     return (
-        <PageLayout
-            title="Become a Tutor"
-            subtitle="Join our community of educators and start making a difference in students' lives"
-        >
-            {/* Benefits */}
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-                {benefits.map((benefit, index) => (
-                    <WhoWeAreCard key={index} className="flex items-start space-x-4">
-                        <div className="text-2xl">{benefit.icon}</div>
-                        <div>
-                            <h3 className="font-semibold text-gray-800 mb-2">{benefit.title}</h3>
-                            <p className="text-gray-600 font-atki text-sm">{benefit.description}</p>
-                        </div>
-                    </WhoWeAreCard>
-                ))}
-            </div>
-
-            {/* Requirements */}
-            <WhoWeAreCard className="mb-12">
-                <h3 className="text-2xl font-instru font-semibold text-gray-800 mb-6 text-center">
-                    Tutor Requirements
-                </h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                    {requirements.map((requirement, index) => (
-                        <div key={index} className="flex items-center space-x-3">
-                            <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
-                            <span className="text-gray-600 font-atki">{requirement}</span>
-                        </div>
+        <div className='bg-white'>
+            <PageLayout
+                title="Become a Tutor"
+                subtitle="Join our community of educators and start making a difference in students' lives"
+            >
+                {/* Benefits */}
+                <div className="grid md:grid-cols-2 gap-6 mb-12">
+                    {benefits.map((benefit, index) => (
+                        <WhoWeAreCard key={index} className="flex items-start space-x-4">
+                            <div className="text-2xl">{benefit.icon}</div>
+                            <div>
+                                <h3 className="font-semibold text-gray-800 mb-2">{benefit.title}</h3>
+                                <p className="text-gray-600 font-atki text-sm">{benefit.description}</p>
+                            </div>
+                        </WhoWeAreCard>
                     ))}
                 </div>
-            </WhoWeAreCard>
 
-            {/* Application Form */}
-            <WhoWeAreCard>
-                <h3 className="text-2xl font-instru font-semibold text-gray-800 mb-6 text-center">
-                    Start Your Teaching Journey
-                </h3>
-                <div className="grid md:grid-cols-2 gap-4 mb-6">
-                    <input type="text" placeholder="Full Name" className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500" />
-                    <input type="email" placeholder="Email Address" className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500" />
-                    <input type="tel" placeholder="Phone Number" className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500" />
-                    <select className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500">
-                        <option>Select Subject</option>
-                        <option>Mathematics</option>
-                        <option>Science</option>
-                        <option>English</option>
-                        <option>Computer Science</option>
-                    </select>
-                    <input type="text" placeholder="Educational Qualification" className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 md:col-span-2" />
-                    <textarea placeholder="Teaching Experience (if any)" rows={3} className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 md:col-span-2"></textarea>
-                </div>
-                <div className="text-center">
-                    <CTAButton className="px-12">Apply Now</CTAButton>
-                </div>
-            </WhoWeAreCard>
-        </PageLayout>
+                {/* Requirements */}
+                <WhoWeAreCard className="mb-12">
+                    <h3 className="text-2xl font-instru font-semibold text-gray-800 mb-6 text-center">
+                        Tutor Requirements
+                    </h3>
+                    <div className="grid md:grid-cols-2 gap-4">
+                        {requirements.map((requirement, index) => (
+                            <div key={index} className="flex items-center space-x-3">
+                                <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 font-atki">{requirement}</span>
+                            </div>
+                        ))}
+                    </div>
+                </WhoWeAreCard>
+
+                {/* Application Form */}
+                <WhoWeAreCard>
+                    <h3 className="text-2xl font-instru font-semibold text-gray-800 mb-6 text-center">
+                        Start Your Teaching Journey
+                    </h3>
+                    <div className="text-black grid md:grid-cols-2 gap-4 mb-6">
+                        <input type="text" placeholder="Full Name" className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                        <input type="email" placeholder="Email Address" className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                        <input type="tel" placeholder="Phone Number" className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                        <select className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <option>Select Subject</option>
+                            <option>Mathematics</option>
+                            <option>Science</option>
+                            <option>English</option>
+                            <option>Computer Science</option>
+                        </select>
+                        <input type="text" placeholder="Educational Qualification" className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 md:col-span-2" />
+                        <textarea placeholder="Teaching Experience (if any)" rows={3} className="bg-white border border-amber-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 md:col-span-2"></textarea>
+                    </div>
+                    <div className="text-center">
+                        <CTAButton className="px-12">Apply Now</CTAButton>
+                    </div>
+                </WhoWeAreCard>
+            </PageLayout>
+        </div>
     );
 };
 

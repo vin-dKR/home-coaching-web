@@ -4,7 +4,7 @@ import FeatureCard from "./FeatureCard";
 
 const FeaturesBento = () => {
     return (
-        <section className="py-20 px-6">
+        <section id="features" className="py-8 md:py-20 px-6">
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl text-center md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-20">
                     What We Provide?

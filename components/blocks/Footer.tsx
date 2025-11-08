@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     return (
         <footer className="relative bg-gradient-to-b from-midy to-transparent border-t border-amber-200 rounded-t-[3rem] border border-black/10 overflow-hidden w-full">
             {/* Main Footer Content */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 w-full">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 w-full">
                     {/* Brand Column */}
                     <div className="lg:col-span-1">
@@ -49,8 +49,8 @@ const Footer: React.FC = () => {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-6 text-amber-700">Quick Links</h4>
-                        <ul className="space-y-3">
+                        <h4 className="text-lg font-semibold mb-1 md:mb-6 text-amber-700">Quick Links</h4>
+                        <ul className="space-y-1 md:space-y-3 font-semibold">
                             {quickLinks.map((link) => (
                                 <li key={link.name}>
                                     <Link
@@ -67,8 +67,8 @@ const Footer: React.FC = () => {
 
                     {/* For Students */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-6 text-amber-700">For Students</h4>
-                        <ul className="space-y-3">
+                        <h4 className="text-lg font-semibold mb-1 md:mb-6 text-amber-700">For Students</h4>
+                        <ul className="space-x-2 md:space-y-3 font-semibold">
                             {forStudents.map((link) => (
                                 <li key={link.name}>
                                     <Link
@@ -85,8 +85,8 @@ const Footer: React.FC = () => {
 
                     {/* For Tutors */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-6 text-amber-700">For Tutors</h4>
-                        <ul className="space-y-3">
+                        <h4 className="text-lg font-semibold mb-1 md:mb-6 text-amber-700">For Tutors</h4>
+                        <ul className="space-x-2 md:space-y-3 font-semibold">
                             {forTutors.map((link) => (
                                 <li key={link.name}>
                                     <Link
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
                 {/* Contact Info */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-amber-200 w-full">
                     {contactInfo.map((contact, index) => (
-                        <div key={index} className="flex items-center space-x-3">
+                        <div key={index} className="flex items-center space-x-3 md:mx-auto">
                             <div className="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0">
                                 <span className="text-white text-sm">{contact.icon}</span>
                             </div>
@@ -131,11 +131,11 @@ const Footer: React.FC = () => {
             <div className="border-t border-amber-200 bg-amber-50/50 w-full">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 w-full">
-                        <div className="text-gray-600 text-sm">
+                        <div className="text-gray-600 text-xs">
                             © {currentYear} {brand.name}. All rights reserved.
                         </div>
 
-                        <div className="flex flex-wrap justify-center gap-4 text-sm">
+                        <div className="flex flex-wrap justify-center gap-4 text-xs">
                             {legalLinks.map((link) => (
                                 <Link
                                     key={link.name}
@@ -149,10 +149,6 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
             </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute bottom-10 left-10 w-6 h-6 bg-amber-300/40 rounded-full"></div>
-            <div className="absolute top-1/4 right-20 w-4 h-4 bg-amber-400/30 rounded-full"></div>
         </footer>
     );
 };

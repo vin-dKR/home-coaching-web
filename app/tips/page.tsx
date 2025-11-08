@@ -34,42 +34,44 @@ const LearningTipsPage: React.FC = () => {
     ];
 
     return (
-        <PageLayout
-            title="Learning Tips & Strategies"
-            subtitle="Expert advice to enhance your learning efficiency and academic performance"
-        >
-            <div className="space-y-8">
-                {tips.map((category, index) => (
-                    <WhoWeAreCard key={index}>
-                        <h3 className="text-2xl font-instru font-semibold text-gray-800 mb-6">
-                            {category.category}
-                        </h3>
-                        <div className="grid md:grid-cols-2 gap-4">
-                            {category.tips.map((tip, tipIndex) => (
-                                <div key={tipIndex} className="flex items-start space-x-3">
-                                    <div className="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                        <span className="text-amber-600 text-xs">💡</span>
+        <div className='bg-white'>
+            <PageLayout
+                title="Learning Tips & Strategies"
+                subtitle="Expert advice to enhance your learning efficiency and academic performance"
+            >
+                <div className="space-y-8">
+                    {tips.map((category, index) => (
+                        <WhoWeAreCard key={index}>
+                            <h3 className="text-2xl font-instru font-semibold text-gray-800 mb-6">
+                                {category.category}
+                            </h3>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                {category.tips.map((tip, tipIndex) => (
+                                    <div key={tipIndex} className="flex items-start space-x-3">
+                                        <div className="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                            <span className="text-amber-600 text-xs">💡</span>
+                                        </div>
+                                        <p className="text-gray-600 font-atki leading-relaxed">{tip}</p>
                                     </div>
-                                    <p className="text-gray-600 font-atki leading-relaxed">{tip}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </WhoWeAreCard>
-                ))}
-            </div>
+                                ))}
+                            </div>
+                        </WhoWeAreCard>
+                    ))}
+                </div>
 
-            <WhoWeAreCard className="text-center mt-12">
-                <h3 className="text-2xl font-instru font-semibold text-gray-800 mb-4">
-                    Get Personalized Learning Advice
-                </h3>
-                <p className="text-gray-600 mb-6">
-                    Our tutors can provide customized learning strategies based on your specific needs and goals
-                </p>
-                <button className="bg-amber-500 text-white px-8 py-3 rounded-2xl font-semibold hover:bg-amber-600 transition-colors">
-                    Connect with a Learning Coach
-                </button>
-            </WhoWeAreCard>
-        </PageLayout>
+                <WhoWeAreCard className="text-center mt-12">
+                    <h3 className="text-2xl font-instru font-semibold text-gray-800 mb-4">
+                        Get Personalized Learning Advice
+                    </h3>
+                    <p className="text-gray-600 mb-6">
+                        Our tutors can provide customized learning strategies based on your specific needs and goals
+                    </p>
+                    <button className="bg-amber-500 text-white px-8 py-3 rounded-2xl font-semibold hover:bg-amber-600 transition-colors">
+                        Connect with a Learning Coach
+                    </button>
+                </WhoWeAreCard>
+            </PageLayout>
+        </div>
     );
 };
 
